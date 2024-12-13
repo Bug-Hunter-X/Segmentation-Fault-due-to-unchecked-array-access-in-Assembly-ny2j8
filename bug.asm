@@ -1,0 +1,3 @@
+mov eax, [ebx + ecx*4 + 0x10]
+
+The above instruction attempts to access memory at an address calculated as ebx + ecx*4 + 0x10.  If the calculation results in an address outside the bounds of accessible memory, a segmentation fault or general protection fault will occur.  This is a common error when working with arrays or pointers, especially if the index (ecx in this case) is not properly validated or could exceed the array bounds.
